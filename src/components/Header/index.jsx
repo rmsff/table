@@ -14,7 +14,7 @@ export default ({
 	const modalForm = () => (
 		<div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
 			{formElements.map(({ type, input }) => (
-				<div key={uniqueId()}>
+				<div key={type}>
 					<p>type</p>
 					<Input value={input} onChange={onChangeInput} typecol={type} />
 				</div>
