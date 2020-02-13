@@ -1,5 +1,9 @@
 This project is a test task and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Watch the video demo
+
+[![Watch the video demo](https://res.cloudinary.com/serikoff/image/upload/v1581587595/%D0%A1%D0%BD%D0%B8%D0%BC%D0%BE%D0%BA_%D1%8D%D0%BA%D1%80%D0%B0%D0%BD%D0%B0_2020-02-13_%D0%B2_12.52.48_qqnyne.png)](https://res.cloudinary.com/serikoff/video/upload/v1581587560/film_table_xd3ero.mp4)
+
 ## Available Scripts
 
 In the project directory, you can run:
