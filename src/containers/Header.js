@@ -6,7 +6,7 @@ import { Header } from 'components';
 
 const mapStateToProps = ({ table: { items, isLoading } }) => ({ data: items, isLoading });
 
-const TableContainer = ({ data, isLoading, addItems }) => {
+const TableContainer = ({ isLoading, addItems }) => {
 	const [isVisibleModal, setIsVisibleModal] = useState(false);
 	const [inputId, setInputId] = useState('');
 	const [inputFirstName, setInputFirstName] = useState('');
@@ -28,7 +28,14 @@ const TableContainer = ({ data, isLoading, addItems }) => {
 		mapping[typecol](value);
 	};
 
-	const handleIsVisibleModal = () => setIsVisibleModal(!isVisibleModal);
+	const handleIsVisibleModal = () => {
+		setIsVisibleModal(!isVisibleModal);
+		setInputId('');
+		setInputFirstName('');
+		setInputLastName('');
+		setInputEmail('');
+		setInputPhone('');
+	};
 
 	const handleAddRecord = () => {
 		addItems({

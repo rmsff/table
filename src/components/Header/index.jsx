@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Icon, Modal, Input } from 'antd';
-import { uniqueId } from 'lodash';
 
 export default ({
 	onIsVisibleModal,
@@ -32,6 +31,7 @@ export default ({
 				title={'Добавить в таблицу'}
 				visible={isVisibleModal}
 				onCancel={onIsVisibleModal}
+				cancelButtonProps={{ hidden: true }}
 				onOk={onAddRecord}
 				okText={'Добавить в таблицу'}
 				okButtonProps={{ disabled: isDisableBtn }}
