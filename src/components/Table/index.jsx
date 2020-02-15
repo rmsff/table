@@ -1,8 +1,9 @@
 import React from 'react';
 import { Table } from 'antd';
-import { uniqueId } from 'lodash';
+import { uniqueId } from 'utils/helpers';
 
-export default ({ columns, data, onChange, expandedRowRender, isLoading }) => (<Table
+export default ({ columns, data, onChange, expandedRowRender, isLoading }) => (
+	<Table
 		columns={columns}
 		dataSource={data}
 		onChange={onChange}
@@ -10,4 +11,5 @@ export default ({ columns, data, onChange, expandedRowRender, isLoading }) => (<
 		rowKey={() => uniqueId('id')}
 		expandedRowRender={expandedRowRender}
 		loading={isLoading}
-	/>)
+	/>
+);

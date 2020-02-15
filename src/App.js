@@ -5,15 +5,14 @@ import { tableActions } from 'redux/actions';
 import { Table, Header } from './containers';
 import './App.css';
 
-const mapStateToProps = ({ fetchData, table: { items, isLoading } }) => ({
-	fetchData,
-	data: items,
-	isLoading,
-});
+const mapStateToProps = ({ fetchData }) => ({ fetchData });
 
-const App = props => {
-	const { fetchData, data, isLoading } = props;
-	!data.length && !isLoading && fetchData(1000);
+const App = ({ fetchData }) => {
+	let isFirstRequest = true;
+	if (isFirstRequest) {
+		isFirstRequest = false;
+		fetchData(1000);
+	}
 	return (
 		<div className="app">
 			<Header />
