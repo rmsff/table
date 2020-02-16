@@ -37,7 +37,7 @@ const TableContainer = ({ isLoading, addItems }) => {
 		setInputPhone('');
 	};
 
-	const handleAddRecord = () => {
+	const handleAddRecord = (event) => {
 		addItems({
 			id: inputId,
 			firstName: inputFirstName,
@@ -46,11 +46,7 @@ const TableContainer = ({ isLoading, addItems }) => {
 			phone: inputPhone,
 		});
 		setIsVisibleModal(false);
-		setInputId('');
-		setInputFirstName('');
-		setInputLastName('');
-		setInputEmail('');
-		setInputPhone('');
+		event.preventDefault();
 	};
 	const formElements = [
 		{ type: 'id', input: inputId },

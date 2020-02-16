@@ -11,19 +11,24 @@ export default ({
 	isDisableBtn,
 }) => {
 	const modalForm = () => (
-		<div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
-			{formElements.map(({ type, input }) => (
-				<div key={type}>
-					<p>type</p>
-					<Input value={input} onChange={onChangeInput} typecol={type} />
-				</div>
-			))}
-		</div>
+		<form id="form" className="form" onSubmit={onAddRecord}>
+			<div className="form__body">
+				{formElements.map(({ type, input }) => (
+					<div key={type}>
+						<p>type</p>
+						<Input value={input} onChange={onChangeInput} typecol={type} />
+					</div>
+				))}
+			</div>
+			<div className="form__footer">
+				<Input type="submit" value="+ Добавить в таблицу" disabled={isDisableBtn} />
+			</div>
+		</form>
 	);
 
 	return (
 		<div className="header">
-			<Button size={'large'} onClick={onIsVisibleModal} disabled={isLoading}>
+			<Button size="large" onClick={onIsVisibleModal} disabled={isLoading}>
 				<Icon type="plus" />
 				Добавить
 			</Button>
@@ -32,9 +37,8 @@ export default ({
 				visible={isVisibleModal}
 				onCancel={onIsVisibleModal}
 				cancelButtonProps={{ hidden: true }}
-				onOk={onAddRecord}
-				okText={'Добавить в таблицу'}
-				okButtonProps={{ disabled: isDisableBtn }}
+				okButtonProps={{ hidden: true }}
+				footer={null}
 				width="1000">
 				{modalForm()}
 			</Modal>

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { tableActions } from 'redux/actions';
 import { Table, Header } from './containers';
-import './App.css';
+import './App.scss';
 
 const mapStateToProps = ({ fetchData }) => ({ fetchData });
 

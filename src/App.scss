@@ -1,0 +1,17 @@
+@import '~antd/dist/antd.css';
+
+.form {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__footer {
+    margin-top:30px;
+    display: flex;
+    justify-content: flex-end;
+    input {
+      width: 170px;
+    }
+  }
+}
