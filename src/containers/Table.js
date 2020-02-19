@@ -25,7 +25,10 @@ const TableContainer = ({ data, isLoading }) => {
 	};
 
 	let searchInput = {};
-	const getColumnSearchProps = dataIndex => ({
+	const getColumnProps = dataIndex => ({
+		dataIndex,
+		key: dataIndex,
+		ellipsis: true,
 		filterDropdown: ({ setSelectedKeys, selectedKeys, confirm, clearFilters }) => (
 			<div style={{ padding: 8 }}>
 				<Input
@@ -78,58 +81,39 @@ const TableContainer = ({ data, isLoading }) => {
 			) : (
 				text
 			),
+		sortOrder: sortedInfo.columnKey === dataIndex && sortedInfo.order,
 	});
 
 	const columns = [
 		{
 			title: 'id',
-			dataIndex: 'id',
-			key: 'id',
 			width: '11%',
 			sorter: (a, b) => a.id - b.id,
-			sortOrder: sortedInfo.columnKey === 'id' && sortedInfo.order,
-			ellipsis: true,
-			...getColumnSearchProps('id'),
+			...getColumnProps('id'),
 		},
 		{
 			title: 'firstName',
-			dataIndex: 'firstName',
-			key: 'firstName',
 			width: '16%',
 			sorter: (a, b) => (a.firstName.toLowerCase() < b.firstName.toLowerCase() ? -1 : 1),
-			sortOrder: sortedInfo.columnKey === 'firstName' && sortedInfo.order,
-			ellipsis: true,
-			...getColumnSearchProps('firstName'),
+			...getColumnProps('firstName'),
 		},
 		{
 			title: 'lastName',
-			dataIndex: 'lastName',
-			key: 'lastName',
 			width: '16%',
 			sorter: (a, b) => (a.lastName.toLowerCase() < b.lastName.toLowerCase() ? -1 : 1),
-			sortOrder: sortedInfo.columnKey === 'lastName' && sortedInfo.order,
-			ellipsis: true,
-			...getColumnSearchProps('lastName'),
+			...getColumnProps('lastName'),
 		},
 		{
 			title: 'email',
-			dataIndex: 'email',
-			key: 'email',
 			width: '20%',
 			sorter: (a, b) => (a.email.toLowerCase() < b.email.toLowerCase() ? -1 : 1),
-			sortOrder: sortedInfo.columnKey === 'email' && sortedInfo.order,
-			ellipsis: true,
-			...getColumnSearchProps('email'),
+			...getColumnProps('email'),
 		},
 		{
 			title: 'phone',
-			dataIndex: 'phone',
-			key: 'phone',
 			width: '20%',
 			sorter: (a, b) => a.phone.replace(/-|\(|\)/g, '') - b.phone.replace(/-|\(|\)/g, ''),
-			sortOrder: sortedInfo.columnKey === 'phone' && sortedInfo.order,
-			ellipsis: true,
-			...getColumnSearchProps('phone'),
+			...getColumnProps('phone'),
 		},
 	];
 	const expandedRowRender = ({
