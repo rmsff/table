@@ -1,7 +1,6 @@
 This project is a test task and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/05ee95200bd6dd123f97/maintainability)](https://codeclimate.com/github/serikoff/chat-client/maintainability)
-
+[![Maintainability](https://api.codeclimate.com/v1/badges/99d09a646dca97f98876/maintainability)](https://codeclimate.com/github/serikoff/table/maintainability)
 ##
 
 [Demo link](http://chat-app.website/table/index.html)
