@@ -14,7 +14,7 @@ const App = ({ fetchData }) => {
 		fetchData(1000);
 	}
 	return (
-		<div className="app">
+		<div id="app" className="app">
 			<Header />
 			<Table />
 		</div>

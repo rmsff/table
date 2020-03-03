@@ -11,5 +11,7 @@ export default ({ columns, data, onChange, expandedRowRender, isLoading }) => (
 		rowKey={() => uniqueId('id')}
 		expandedRowRender={expandedRowRender}
 		loading={isLoading}
+		bordered="true"
+		expandRowByClick="true"
 	/>
 );

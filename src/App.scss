@@ -1,17 +1,27 @@
 @import '~antd/dist/antd.css';
 
-.form {
-  &__body {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-  }
-  &__footer {
-    margin-top:30px;
-    display: flex;
-    justify-content: flex-end;
-    input {
-      width: 170px;
+#root {
+  padding: 10px;
+
+}
+.ant-table-wrapper {
+  padding-top: 10px;
+}
+.ant-modal {
+  padding: 10px;
+  .form {
+    &__body {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    &__footer {
+      margin-top:30px;
+      display: flex;
+      justify-content: flex-end;
+      input {
+        width: 170px;
+      }
     }
   }
 }
