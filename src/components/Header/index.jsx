@@ -15,7 +15,7 @@ export default ({
 			<div className="form__body">
 				{formElements.map(({ type, input }) => (
 					<div key={type}>
-						<p>type</p>
+						<p>{type}</p>
 						<Input value={input} onChange={onChangeInput} typecol={type} />
 					</div>
 				))}
